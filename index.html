@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: #1E1E59;
+                color: #FFFBF0;
+                font-family: 'Red Hat Mono', monospace;
+
+            }
+
+            h1 {
+              font-size: calc(1rem + 10vw);
+              font-weight: 700;
+              padding: 0 0 1rem 0;
+            }
+
+h1 span#nombre{
+  text-decoration: underline;
+}
+
+            div {
+                padding: 2rem;
+            }
+            p {
+                padding: 1rem 0;
+                font-size: calc(0.2rem + 1vw);
+            }
+
+
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+        <title>Hola gente</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <div>
+            <h1><span id="saludo"></span> Me llamo <span id="nombre"></span></h1>
+            <p>Tomé este electivo porque quiero aprender a hacer páginas web y me interesa un montón adentrarme más en lo que es el diseño UI/UX. </p>
+            <p>No conocía Github y me pareció una herramienta genial :) Me di cuenta de que aprendería el por qué de ciertas cosas que yo usaba en HTML pero no sabía por qué o cómo funcionaban
+             </p>
+        </div>
+
+        <script>
+
+          var opciones = ["Hola!", "Mari mari!", "Buenas!", "Qué tal?"];
+
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Millaray";
+              document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+                background(106,90,205);
+                textSize(100);
+                text("🌞",mouseX,mouseY);
+                ellipse(mouseX + 70, mouseY + 50, 70, 10 );
+                fill (30, 30, 89);
+
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
